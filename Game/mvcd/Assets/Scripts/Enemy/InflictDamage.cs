@@ -5,6 +5,9 @@ using UnityEngine;
 public class InflictDamage : MonoBehaviour
 {
     [SerializeField] private float damage;
+    [SerializeField] private float timeBetweenDamage;
+    private HashSet<GameObject> invincibleFrom = new HashSet<GameObject>(); // Tracks attackers the player is invincible to
+ 
 
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -15,7 +18,20 @@ public class InflictDamage : MonoBehaviour
             {
                 return;
             }
-            healthController.TakeDamage(damage);
+            
+            if (!invincibleFrom.Contains(gameObject))
+            {
+                healthController.TakeDamage(damage);
+                StartCoroutine(DontTakeCoroutine(timeBetweenDamage, gameObject));
+            }
+            
         }
     }
+    
+    private IEnumerator DontTakeCoroutine(float duration, GameObject attacker)
+       {
+            invincibleFrom.Add(attacker);
+            yield return new WaitForSeconds(duration);
+            invincibleFrom.Remove(attacker);
+       }
 }

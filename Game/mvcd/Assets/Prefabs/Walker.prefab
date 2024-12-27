@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+  timeBetweenDamage: 0.2
 --- !u!95 &8185199037347461278
 Animator:
   serializedVersion: 5

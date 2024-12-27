@@ -9,6 +9,10 @@ public class Bullet : MonoBehaviour
    {
       GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
       Destroy(gameObject);
+      if (collision.gameObject.tag == "Enemy")
+      {
+         Destroy(collision.gameObject);
+      }
       Destroy(effect, 1f);
    }
     

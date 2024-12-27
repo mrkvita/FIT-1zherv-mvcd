@@ -267,6 +267,7 @@ GameObject:
   - component: {fileID: 805883323}
   - component: {fileID: 805883321}
   - component: {fileID: 805883322}
+  - component: {fileID: 805883324}
   m_Layer: 0
   m_Name: Walker
   m_TagString: Enemy
@@ -414,6 +415,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &805883324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805883315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b447d395036673819a53550127658883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  maxHealth: 100
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 805883317}
+        m_TargetAssemblyTypeName: EnemyController, Assembly-CSharp
+        m_MethodName: DestorySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnHit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &866202526
 GameObject:
   m_ObjectHideFlags: 0

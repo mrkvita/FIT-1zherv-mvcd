@@ -27,6 +27,5 @@ public class PlayerDetectionController : MonoBehaviour
         {
             playerDetected = false;
         }
-        Debug.Log("player detected" + playerDetected);
     }
 }

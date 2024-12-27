@@ -7,16 +7,11 @@ public class HealthController : MonoBehaviour
    [SerializeField] private float currentHealth;
 
    [SerializeField] private float maxHealth;
-
-   private float PercentageLeft
-   {
-      get{
-         return currentHealth / maxHealth;
-         }
-   }
-
+   
+   public float Health => currentHealth;
+   
    public bool dontGetHit { get; set; }
-      
+
    public void TakeDamage(float damage)
    {
       if (dontGetHit)
@@ -32,6 +27,7 @@ public class HealthController : MonoBehaviour
       else{
          currentHealth -= damage;
          OnHit.Invoke();
+         OnHealthChanged.Invoke();
       }
    }
    
@@ -39,6 +35,7 @@ public class HealthController : MonoBehaviour
 
    public UnityEvent OnHit;
 
+   public UnityEvent OnHealthChanged;
    public void Heal(float heal)
    {
       if (currentHealth + heal >= maxHealth)

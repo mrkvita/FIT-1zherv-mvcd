@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class EnemyController: MonoBehaviour
 {
     
     public Animator animator; 
@@ -72,5 +72,10 @@ public class EnemyMovement : MonoBehaviour
         {
            rb.MovePosition((transform.position + targetDirection * moveSpeed * Time.fixedDeltaTime));
         }
+    }
+    
+    public void DestorySelf()
+    {
+        Destroy(gameObject);
     }
 }

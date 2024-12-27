@@ -5,10 +5,14 @@ using UnityEngine;
 public class DamageIntakeController : MonoBehaviour
 {
    private HealthController healthController;
-
-   private void Awake()
+  private void Awake()
    {
       healthController = GetComponent<HealthController>();
+      if (healthController == null)
+      {
+         Debug.LogError("Health Controller not found");
+         return;
+      }
    }
 
    public void StartDontTake(float duration)
@@ -18,8 +22,10 @@ public class DamageIntakeController : MonoBehaviour
 
    private IEnumerator DontTakeCoroutine(float duration)
    {
-      healthController.dontGetHit = true;
-      yield return new WaitForSeconds(duration);
-      healthController.dontGetHit = false;
+      if(healthController != null) {
+         healthController.dontGetHit = true;
+         yield return new WaitForSeconds(duration);
+         healthController.dontGetHit = false;
+      }
    }
 }

@@ -51,7 +51,6 @@ public class PlayerController : MonoBehaviour
         Vector2 lookDir = mousePos - rb.position;
        // get the angle of the vector  
        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-        Debug.Log(angle);
         if (facingRight)
         {
             // checking for the correct quadrants in which to flip

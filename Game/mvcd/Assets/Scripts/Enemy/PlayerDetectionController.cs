@@ -16,9 +16,17 @@ public class PlayerDetectionController : MonoBehaviour
     }
     void Update()
     {
-        Vector2 enemyToPlayer = playerTransform.position - transform.position;
+        Vector3 enemyToPlayer = playerTransform.position - transform.position;
         float distanceToPlayer = enemyToPlayer.magnitude; 
-        // only need the direction
-        directionToPlayer = enemyToPlayer.normalized;    
+        directionToPlayer = enemyToPlayer.normalized;
+        if (distanceToPlayer < detectionRange)
+        {
+            playerDetected = true;
+        }
+        else
+        {
+            playerDetected = false;
+        }
+        Debug.Log("player detected" + playerDetected);
     }
 }

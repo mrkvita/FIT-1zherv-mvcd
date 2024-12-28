@@ -16,6 +16,14 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
+        if (playerController != null)
+        {
+            Shooting weapon = gameObject.GetComponentInChildren<Shooting>();
+            if (weapon != null)
+            {
+                weapon.isEquiped = true;
+            }
+        }
     }
     void Update()
     {

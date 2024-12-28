@@ -7,17 +7,17 @@ using UnityEngine;
 public class HealthCollectable : MonoBehaviour
 {
    [SerializeField] private float healAmount;
+   public GameObject healAnim;
 
    private void OnTriggerEnter2D(Collider2D collision)
    {
-      Debug.Log("Collided with " + collision.gameObject.name);
-      
       if (collision.gameObject.CompareTag("Player"))
       {
-         Debug.Log("collided with player");
+         GameObject anim = Instantiate(healAnim, transform.position, Quaternion.identity);
          HealthController playerHealth = collision.gameObject.GetComponent<HealthController>();
          playerHealth.Heal(healAmount);
          Destroy(gameObject);
+         Destroy(anim, 2f);
       }
    }
 }

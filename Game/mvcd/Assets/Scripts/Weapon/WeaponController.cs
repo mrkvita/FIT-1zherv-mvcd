@@ -16,10 +16,6 @@ public class WeaponController : MonoBehaviour
     void Start()
     {
         playerController = GetComponentInParent<PlayerController>();
-        if (playerController == null)
-        {
-            Debug.LogError("PlayerController not found");
-        }
     }
     void Update()
     {

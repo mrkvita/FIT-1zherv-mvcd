@@ -46,6 +46,7 @@ public class HealthController : MonoBehaviour
       {
          currentHealth += heal;
       }
+      OnHealthChanged.Invoke();
    }
    
 }

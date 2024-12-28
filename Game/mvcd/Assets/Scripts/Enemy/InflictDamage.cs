@@ -27,11 +27,6 @@ public class InflictDamage : MonoBehaviour
                 StartCoroutine(DontTakeCoroutine(timeBetweenDamage, gameObject));
             }
         }
-
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        }
     }
     
     private IEnumerator DontTakeCoroutine(float duration, GameObject attacker)

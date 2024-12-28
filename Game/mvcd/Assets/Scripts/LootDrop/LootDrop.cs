@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class LootDrop : MonoBehaviour
 {
-   [SerializeField] private GameObject lootPrefab;
+   [SerializeField] private GameObject lootPrefab1;
+   [SerializeField] private GameObject lootPrefab2;
    
    private void OnCollisionEnter2D(Collision2D other)
    {
       if (other.gameObject.CompareTag("Bullet"))
       {
          float dropLoot = Random.Range(0f, 100f);
-         if (dropLoot <= 50)
+         if (dropLoot <= 30)
          {
-            GameObject loot = Instantiate(lootPrefab, transform.position, Quaternion.identity);
+            GameObject loot = Instantiate(lootPrefab1, transform.position, Quaternion.identity);
+         }
+         else if (dropLoot <= 60)
+         {
+            GameObject loot = Instantiate(lootPrefab2, transform.position, Quaternion.identity);
          }
          Destroy(gameObject);
       }

@@ -40,9 +40,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Effects
-    uniqueID: 2202949537
+  - name: Water
+    uniqueID: 1093212401
+    locked: 0
+  - name: Ground
+    uniqueID: 1011046547
+    locked: 0
+  - name: Rocks
+    uniqueID: 1027895943
+    locked: 0
+  - name: Vegetation
+    uniqueID: 887366395
+    locked: 0
+  - name: Bullets
+    uniqueID: 893045813
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effects
+    uniqueID: 2202949537
     locked: 0

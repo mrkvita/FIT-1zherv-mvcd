@@ -18,13 +18,19 @@ public class InflictDamage : MonoBehaviour
             {
                 return;
             }
-            
+            // The player is now not invincible from all the 
+            // walkers but rather the times of invincibility are
+            // calcluated for each walker respecivily 
             if (!invincibleFrom.Contains(gameObject))
             {
                 healthController.TakeDamage(damage);
                 StartCoroutine(DontTakeCoroutine(timeBetweenDamage, gameObject));
             }
-            
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
     }
     

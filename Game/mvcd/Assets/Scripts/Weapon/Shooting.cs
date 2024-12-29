@@ -10,6 +10,10 @@ public class Shooting : MonoBehaviour
     
     public bool isEquiped = true;
     
+    public AudioSource audioSource;
+    
+    public AudioClip shootingAudioclip;
+    
     [SerializeField] private int shotType = 0;
     
     [SerializeField] private int shotGunBullets;
@@ -39,6 +43,7 @@ public class Shooting : MonoBehaviour
 
     void ShootPistol()
     {
+        audioSource.PlayOneShot(shootingAudioclip);
         SpawnBullet(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation, bulletSpawn.right);
     }
     
@@ -50,6 +55,8 @@ public class Shooting : MonoBehaviour
     }
     void ShootShotGun()
     {
+        
+            audioSource.PlayOneShot(shootingAudioclip);
             for (int i = 0; i < shotGunBullets; i++)
             {
                 float angle = (i - (shotGunBullets/2f)) * shotGunSpread / shotGunBullets;

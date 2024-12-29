@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3623152512404998171}
   - component: {fileID: 560784630921572406}
   - component: {fileID: 7178249733748227681}
+  - component: {fileID: 4618791213453654701}
   m_Layer: 0
   m_Name: Bass
   m_TagString: Player
@@ -298,6 +299,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0.008249044, y: -0.014141291}
   m_Size: {x: 0.5150851, y: 0.70599276}
   m_Direction: 0
+--- !u!114 &4618791213453654701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341921450872699423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e602e24ae6a3acf8c866abbf7b8144f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponHolder: {fileID: 3884502825770131351}
+  currentItem: {fileID: 6785783767658079511}
+  pickupKey: 101
 --- !u!1 &1468779971463327904
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 6785783767658079511}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.094, y: 0.044, z: 0}
+  m_LocalPosition: {x: 0.013, y: 0.029, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -444,6 +460,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6625085143996376029, guid: 5e5fa5c6af2ea5ce2a4dba18ea75dfaf, type: 3}
   bulletSpawn: {fileID: 1695089199656240235}
+  isEquiped: 1
+  shotType: 0
+  shotGunBullets: 0
+  shotGunSpread: 0
   bulletForce: 20
 --- !u!1 &8637851626492691248
 GameObject:

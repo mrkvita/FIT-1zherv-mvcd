@@ -50,14 +50,14 @@ TagManager:
   - name: Rocks
     uniqueID: 1027895943
     locked: 0
-  - name: Vegetation
-    uniqueID: 887366395
-    locked: 0
   - name: Bullets
     uniqueID: 893045813
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Vegetation
+    uniqueID: 887366395
     locked: 0
   - name: ShotGun
     uniqueID: 2704087365

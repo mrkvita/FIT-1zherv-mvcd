@@ -2,18 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Animator animator;
+    public GameObject pauseMenu;
     
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 mousePos;
-
-    public UnityEvent onScoreChanged;
     
+    public KeyCode goToMenueKey = KeyCode.Escape;
     public bool facingRight = true;
 
     // Get the rb component
@@ -27,6 +28,15 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+
+        bool status = pauseMenu.activeSelf ? true : false;
+        if (Input.GetKeyDown(goToMenueKey))
+        {
+            pauseMenu.SetActive(!status);
+            Time.timeScale =status ? 1 : 0; 
+        }
+
     }
 
     // Movement

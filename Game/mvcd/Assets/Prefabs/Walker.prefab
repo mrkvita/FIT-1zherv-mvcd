@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 5088674141626148974}
   - component: {fileID: -2970651638097337596}
   - component: {fileID: -86197082514517718}
+  - component: {fileID: 6980414859271837278}
   m_Layer: 7
   m_Name: Walker
   m_TagString: Enemy
@@ -243,6 +244,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6980414859271837278}
+        m_TargetAssemblyTypeName: TriggerScoreIncrement, Assembly-CSharp
+        m_MethodName: TriggerScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1328631654604895615, guid: b3ba822d5d87053b19a5def8ac63251d, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: WalkerKilled
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHit:
     m_PersistentCalls:
       m_Calls: []
@@ -329,3 +354,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01}
   m_EdgeRadius: 0
+--- !u!114 &6980414859271837278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257022802773928429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daf0820fae2c365f7a8067e081862f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private Vector2 mousePos;
+
+    public UnityEvent onScoreChanged;
     
     public bool facingRight = true;
-    
+
     // Get the rb component
     void Start()
     {

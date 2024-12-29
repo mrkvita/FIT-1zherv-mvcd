@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 560784630921572406}
   - component: {fileID: 7178249733748227681}
   - component: {fileID: 4618791213453654701}
+  - component: {fileID: 7440696146700498641}
   m_Layer: 0
   m_Name: Bass
   m_TagString: Player
@@ -178,19 +179,7 @@ MonoBehaviour:
         m_CallState: 2
   OnHealthChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: UpdateSlider
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &8606993024545474705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +217,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -314,6 +303,33 @@ MonoBehaviour:
   weaponHolder: {fileID: 3884502825770131351}
   currentItem: {fileID: 6785783767658079511}
   pickupKey: 101
+--- !u!114 &7440696146700498641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341921450872699423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d990641d0e17e4a0913ad2c206fc298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnNewScore:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1468779971463327904
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +477,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6625085143996376029, guid: 5e5fa5c6af2ea5ce2a4dba18ea75dfaf, type: 3}
   bulletSpawn: {fileID: 1695089199656240235}
   isEquiped: 1
+  audioSource: {fileID: 0}
+  shootingAudioclip: {fileID: 0}
   shotType: 0
   shotGunBullets: 0
   shotGunSpread: 0

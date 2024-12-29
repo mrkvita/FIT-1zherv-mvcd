@@ -27,7 +27,6 @@ public class LootDrop : MonoBehaviour
 
    private void OnTriggerStay2D(Collider2D other)
    {
-      Debug.Log("Entered trigger");
       if (other.gameObject.CompareTag("Player"))
       {
          playerInRange = true;
@@ -36,7 +35,6 @@ public class LootDrop : MonoBehaviour
 
    private void OnTriggerExit2D(Collider2D other)
    {
-      Debug.Log("Exited trigger");
       if (other.gameObject.CompareTag("Player"))
       {
          playerInRange = false;

@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject walkerPrefab;
-    
-    private float spawnRate = 2.5f;
-    private float spawnAmount = 2f;
+    [SerializeField] private float spawnRate = 2.5f;
+    [SerializeField] private float spawnAmount = 2f;
 
     void Start()
     {

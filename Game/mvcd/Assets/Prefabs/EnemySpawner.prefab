@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkerPrefab: {fileID: 1257022802773928429, guid: cebaf8a67819da3fca7cc9e41456e808, type: 3}
+  spawnRate: 2.5
+  spawnAmount: 1
 --- !u!212 &-4396042786842755314
 SpriteRenderer:
   m_ObjectHideFlags: 0

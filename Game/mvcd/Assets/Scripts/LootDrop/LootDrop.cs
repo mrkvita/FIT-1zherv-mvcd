@@ -11,15 +11,24 @@ public class LootDrop : MonoBehaviour
    [SerializeField] private float dropRate;
    [SerializeField] private float shotgunSpawnRate;
    [SerializeField] private float healSpawnRate;
+   
    public KeyCode openKey = KeyCode.E;
    public bool lootable = false; // false for destroy true for loot  
    private bool playerInRange = false;
+   private LootDropSpawner spawner;
+
+   void Start()
+   {
+      spawner = FindObjectOfType<LootDropSpawner>();
+   }
    private void OnCollisionEnter2D(Collision2D other)
    {
       if( !lootable ){
          if (other.gameObject.CompareTag("Bullet"))
          {
             DropLoot();
+            spawner.counter--;
+            Debug.Log("I was destroyed" + spawner.counter);
             Destroy(gameObject);
          }
       }

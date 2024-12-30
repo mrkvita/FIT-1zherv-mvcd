@@ -23,10 +23,9 @@ public class LootDropSpawner : MonoBehaviour
         yield return new WaitForSeconds(rate);
         float offsetX= Random.Range(-maxOffsetX, maxOffsetX);
         float offsetY = Random.Range(-maxOffsetY, maxOffsetY);
-        if (counter < maxSpawnsAtOnce)
+        if (counter < maxSpawnsAtOnce && counter >= 0)
         {
             counter++;
-            Debug.Log("Spawning Loot"  + counter);
             Instantiate(lootDropPrefab ,new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, transform.position.z), Quaternion.identity);
         }
         StartCoroutine(spawnLoot(spawnRate, spawnAmount, lootDropPrefab));

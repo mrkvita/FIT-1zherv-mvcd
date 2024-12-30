@@ -135,11 +135,11 @@ MonoBehaviour:
   bulletSpawn: {fileID: 5652973472295295156}
   isEquiped: 0
   audioSource: {fileID: -3220957756112173505}
-  shootingAudioclip: {fileID: 8300000, guid: 471f0247610bfb570b68d5545fc87abb, type: 3}
+  shootingAudioclip: {fileID: 8300000, guid: 281f66905fd774b50beb3a28f4875cc1, type: 3}
   shotType: 0
   shotGunBullets: 3
   shotGunSpread: 3
-  bulletForce: 10
+  bulletForce: 9
 --- !u!61 &-3455884948974625130
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -197,7 +197,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 1626868428840280856, guid: 454c5115a18bec1788131c7b74b0bd49, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 0
   Mute: 0

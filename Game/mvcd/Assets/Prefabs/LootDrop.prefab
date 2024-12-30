@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healPrefab: {fileID: 2815292545696862701, guid: e2d4b343a7db78518b421d2c769580dc, type: 3}
-  weaponPrefab: {fileID: 991437779541211885, guid: f7ea15a703cdb782dab6caacf7b9516d, type: 3}
+  weaponPrefab: {fileID: 7059530844830980107, guid: 0b12d915a9beaea5280d1242404af0d7, type: 3}
   dropRate: 50
   shotgunSpawnRate: 100
   healSpawnRate: 99

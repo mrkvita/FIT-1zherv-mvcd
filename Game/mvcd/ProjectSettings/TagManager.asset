@@ -56,11 +56,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Vegetation
-    uniqueID: 887366395
-    locked: 0
   - name: ShotGun
     uniqueID: 2704087365
+    locked: 0
+  - name: Vegetation
+    uniqueID: 887366395
     locked: 0
   - name: Effects
     uniqueID: 2202949537

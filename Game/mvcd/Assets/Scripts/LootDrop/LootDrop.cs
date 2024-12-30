@@ -14,23 +14,24 @@ public class LootDrop : MonoBehaviour
    
    public KeyCode openKey = KeyCode.E;
    public bool lootable = false; // false for destroy true for loot  
+   
    private bool playerInRange = false;
-   private LootDropSpawner spawner;
 
+   private bool isDestoryed = false;
+   
+   private LootDropSpawner spawner;
+   
    void Start()
    {
       spawner = FindObjectOfType<LootDropSpawner>();
    }
    private void OnCollisionEnter2D(Collision2D other)
    {
-      if( !lootable ){
-         if (other.gameObject.CompareTag("Bullet"))
-         {
+      if( !lootable && other.gameObject.CompareTag("Bullet") && !isDestoryed){
+            isDestoryed = true;
+            Destroy(gameObject);
             DropLoot();
             spawner.counter--;
-            Debug.Log("I was destroyed" + spawner.counter);
-            Destroy(gameObject);
-         }
       }
    }
 
@@ -49,25 +50,29 @@ public class LootDrop : MonoBehaviour
          playerInRange = false;
       }
    }
+   
 
+
+   // this exsis in case multiple bullets hit the collider, without it the counter would underflow 
+   // and unlimited amount of dropboxes would spawn
    private void DropLoot()
-   {
-      float shouldDrop = Random.Range(0f, 100f);
-      float offsetX = Random.Range(-0.35f, 0.35f);
-      float offsetY = Random.Range(-0.35f, 0.35f);
-      if (shouldDrop < dropRate)
-      {
-         float whatToDrop = Random.Range(0f, 100f);
-         if (whatToDrop < healSpawnRate)
-         {
-            Instantiate(healPrefab, new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, transform.position.z), Quaternion.identity);
-         }
-         else if (whatToDrop < shotgunSpawnRate)
-         {
-            Instantiate(weaponPrefab, new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, transform.position.z), Quaternion.identity);
-         }
-            
-      }
+   { 
+     float offsetX = Random.Range(-0.35f, 0.35f);
+     float offsetY = Random.Range(-0.35f, 0.35f);
+     float shouldDrop = Random.Range(0f, 100f);
+     if (shouldDrop < dropRate)
+     {
+        float whatDrop = Random.Range(0f, 100f);
+        if (whatDrop < healSpawnRate)
+        {
+         Instantiate(healPrefab, new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, transform.position.z), Quaternion.identity);
+        }
+        else if (whatDrop < shotgunSpawnRate)
+        {
+         Instantiate(weaponPrefab, new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, transform.position.z), Quaternion.identity);
+        }
+        
+     }
    }
 
    private void Update()

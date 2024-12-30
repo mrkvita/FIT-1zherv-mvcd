@@ -173,5 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 8664754368861739743, guid: b85779b6f0aa1f61c8c1206be506d2dd, type: 3}
   dmg: 30
-  critChance: 2
+  critChance: 35
   critMultiplier: 2

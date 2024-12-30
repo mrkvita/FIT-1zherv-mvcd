@@ -11,7 +11,7 @@ public class ItemPickup : MonoBehaviour
 
    private void OnTriggerStay2D(Collider2D other)
    {
-       if (other.gameObject.CompareTag("Weapon"))
+       if (other.gameObject.CompareTag("Weapon") && gameObject.CompareTag("Player"))
        {
            GameObject groundItem = other.gameObject;
            if (Input.GetKeyDown(pickupKey))
